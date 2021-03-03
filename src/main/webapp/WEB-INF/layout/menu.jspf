@@ -1,0 +1,15 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="com.mycompany.tecnarawebapp.domain.LogIn"%>
+<%@ page pageEncoding="UTF-8" %>
+
+<% LogIn login = (LogIn)request.getSession().getAttribute("login");%>
+<% if(login!= null && login.isIsLogged()){
+   %>
+   <h2>Hello,<%=login.getUsername()%>.  <a href ="/tecnaraWebapp/logout">Logout</a> </h2>
+    
+    <%}else{%>
+    
+    <h2><a href="/tecnaraWebapp/login">login</a></h2>
+    
+    <%}%>
+
